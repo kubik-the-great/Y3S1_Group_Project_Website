@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+			Health-AI
+		</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/4cc223610f.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+        <!--navigation bar-->
+		
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo3.png" width="500px"></a>
+                </div> 
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="d profile.html">Profile</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="msg notification.html"><img src="images/msg_btn.png" width="35px" height="35 px"></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="row-messagnoti">
+                <table>
+                    <tr>
+                        <th>Time</th>
+                        <th>Title</th>
+                        <th>Patient Name</th>
+                        <th>E-mail</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>-</th>
+                        <th>-</th>
+                        <th>-</th>
+                        <th>-</th>
+                        <th><a href="message.html">Open</a></th>
+                    </tr>
+                    <tr>
+                        <th>-</th>
+                        <th>-</th>
+                        <th>-</th>
+                        <th>-</th>
+                        <th><a href="message.html">Open</a></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    
+		<!--footer-->
+		<!--<div class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="footer-col-1">
+						<h3>Download Our App</h3>
+						<p>Download App for Android and IOS mobile phone.</p>
+						<div class="app-logo">
+							<img src="images/AS.png">
+							<img src="images/GP.png">
+						</div>
+					</div>
+					<div class="footer-col-2">
+						<img src="images/logo.jpeg">
+						<p></p>
+					</div>
+				</div>
+				<hr>
+				<p class="copyright">Copyright 2021 - Ong Meng Kian</p>
+			</div>
+		</div>-->
+        
+		<!--js for navigation bar-->
+		<script>
+			var MenuItems = document.getElementById("MenuItems");
+			
+			MenuItems.style.maxHeight = "0px";
+			
+			function menutoggle(){
+				if(MenuItems.style.maxHeight == "0px")
+				{
+					MenuItems.style.maxHeight = "200px";
+				}
+				else
+				{
+					MenuItems.style.maxHeight = "0px";
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+			Health-AI
+		</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/4cc223610f.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+        <!--navigation bar-->
+		<div class = header>
+			<div class="container">
+				<div class="navbar">
+					<div class="logo">
+						<a href="index.html"><img src="images/logo3.png" width="500px"></a>
+					</div>
+					<nav>
+						<ul id="MenuItems">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="d profile.html">Profile</a></li>
+							<li><a href="contact.html">Contact us</a></li>
+							<li><a href="login.html">Login</a></li>
+							<li><a href="msg notification.html"><img src="images/msg_btn.png" width="35px" height="35 px"></a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="row">
+					<div class="col-2">
+						<h1>About Us</h1>
+						<P>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</P>
+					</div>
+					<div class="col-2">
+						<img src="images/logo.jpeg">
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--footer-->
+		<!--<div class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="footer-col-1">
+						<h3>Download Our App</h3>
+						<p>Download App for Android and IOS mobile phone.</p>
+						<div class="app-logo">
+							<img src="images/AS.png">
+							<img src="images/GP.png">
+						</div>
+					</div>
+					<div class="footer-col-2">
+						<img src="images/logo.jpeg">
+						<p></p>
+					</div>
+				</div>
+				<hr>
+				<p class="copyright">Copyright 2021 - Ong Meng Kian</p>
+			</div>
+		</div>-->
+        
+		<!--js for navigation bar-->
+		<script>
+			var MenuItems = document.getElementById("MenuItems");
+			
+			MenuItems.style.maxHeight = "0px";
+			
+			function menutoggle(){
+				if(MenuItems.style.maxHeight == "0px")
+				{
+					MenuItems.style.maxHeight = "200px";
+				}
+				else
+				{
+					MenuItems.style.maxHeight = "0px";
+				}
+			}
+		</script>
+	</body>
+</html>
