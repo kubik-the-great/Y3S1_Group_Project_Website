@@ -10,7 +10,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://kit.fontawesome.com/4cc223610f.js" crossorigin="anonymous"></script>
-	</head>
+		</head>
 	<body>
         <div class="row-login">
 			<div class="col-login">          
@@ -23,14 +23,19 @@
 						<input type="text" id="email" name="email"><br>
 						<label for="password">Password</label><br>
 						<input type="text" id="password" name="password"><br>
-						<input type="submit" value="LOGIN">
+					<div id="divLoginMsg" class="group">
+						<div id="lblLoginMessage">message</div>
+					</div><br>
+						<input type="button" id="login" value="LOGIN">
 					</form>
 					<b>OR</b><br>
-					<img src="images/facebook.png" width="50px"><img src="images/google.png" width="50px"><br>
+					<img src="images/facebook.png" width="50px">
+					<img src="images/google.png" width="50px"><br>
 					<a href="forgetpass.html">I forget my password...</a><br>
-					<p>Don't have an account? <a href="signup.html">Sign up</a></p>
+					<p>Don't have an account? <a href="signup.html">Sign up now</a></p>
 				</div>
 			</div>
 		</div>
+		<script type="module" src="./login.js"></script>
 	</body>
 </html>

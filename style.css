@@ -67,6 +67,7 @@ p{
 }
 .col-2 p{
     margin-right: 50px;
+    justify-content: center;
 }
 .header{
     background: radial-gradient(#EEEEEE,#88FFF7);
@@ -74,6 +75,7 @@ p{
 .header .row{
     margin-top: 10px;
 }
+
 /*-----testimonial 2-----*/
 .brands{
     margin: 100px auto;
@@ -81,7 +83,7 @@ p{
 .col-5{
     width: 160px;
 }
-.col-5 img{
+.col-5  img{
     width: 100%;
     cursor: pointer;
     filter: grayscale(100%);
@@ -145,30 +147,16 @@ ul{
     margin-left: 20px;
     display: none;
 }
-/*-----media query for menu-----*/
-@media only screen and (max-width: 800px){
-    nav ul{
-        position: absolute;
-        top: 105px;
-        left: 0;
-        background: #333;
-        width: 100%;
-        overflow: hidden;
-        transition: max-height 0.5s;
-    }
-    nav ul li{
-        display: block;
-        margin-right: 50px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    nav ul li a{
-        color: #fff;
-    }
-    .menu-icon{
-        display: block;
-        cursor: pointer;
-    }
+
+/*----patient list page-----*/
+.row-patientlist{
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.row-patientlist th, td{
+    padding: 10px 40px;
+    border-style: solid;
 }
 
 /*----login page-----*/
@@ -351,17 +339,6 @@ ul{
     border-style: solid;
 }
 
-/*----patient list page-----*/
-.row-patientlist{
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-.row-patientlist th, td{
-    padding: 10px 40px;
-    border-style: solid;
-}
-
 /*-----about page-----*/
 .about-page{
     text-align: center;
@@ -456,7 +433,7 @@ form a{
     transform: translateX(100px);
     transition: transform 1s;
 }
-/*-----media query for less than 600 screen size-----*/
+/* -----media query for less than 600 screen size-----
 @media only screen and (max-width: 600px){
     .row{
         text-align: center;
@@ -477,4 +454,4 @@ form a{
     .cart-info p{
         display: none;
     }
-}
+} */
