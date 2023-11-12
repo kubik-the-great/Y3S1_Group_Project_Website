@@ -4,7 +4,10 @@ import {
     getAuth,
     signInWithEmailAndPassword,
     AuthErrorCodes,
-    onAuthStateChanged
+    onAuthStateChanged,
+    FacebookAuthProvider,
+    GoogleAuthProvider,
+    signInWithPopup
 } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js'
 
@@ -29,7 +32,8 @@ const firebaseConfig = {
     const btnSignup = document.querySelector("#signup");
     const divLoginMsg = document.querySelector("#divLoginMsg");
     const lblLoginMessage = document.querySelector("#lblLoginMessage");
-
+    const fprovider = new FacebookAuthProvider();
+    const gprovider = new GoogleAuthProvider();
 
     const hideLoginError = () => {
         divLoginMsg.style.display = 'none'
@@ -66,3 +70,45 @@ const firebaseConfig = {
     }
 
     btnLogin.addEventListener("click",loginEmailPassword);
+
+    // Facebook login
+    const facebookimg = document.querySelector("#facebook");
+    facebookimg.addEventListener("click", function(){
+        signInWithPopup(auth, fprovider)
+        .then((result) => {
+            const user = result.user; // Signed in user info
+            const credential = FacebookAuthProvider.credentialFromResult(result);
+            const accessToken = credential.accessToken;
+
+            alert("Welcome " + user.displayName);
+            console.log(user);
+        })
+        .catch((error) =>{
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorMessage);
+            const email = error.customData.email;
+            const credential = FacebookAuthProvider.credentialFromError(error);
+        });
+    });
+
+    // Google login
+    const googleimg = document.querySelector("#google");
+    googleimg.addEventListener("click", function() {
+        signInWithPopup(auth, provider)
+        .then((result) => {
+            const user = result.user; // Signed in user info
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+
+            alert("Welcome "+user.displayName);
+            console.log(user);
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorMessage);
+            const email = error.customData.email;
+            const credential = GoogleAuthProvider.credentialFromError(error);
+        });		  		  
+    });
