@@ -2,9 +2,15 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebas
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics.js";
 import { 
     getAuth,
-    signOut
+    createUserWithEmailAndPassword,
+    onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
-import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js'
+import { 
+    getFirestore, collection, onSnapshot,
+    addDoc, doc,
+    query, where,
+    getDoc
+} from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js'
 
 const firebaseConfig = {
     apiKey: "AIzaSyDJfxh-j3TFZ1YDlOIStrePws_a1g6GXz8",
@@ -22,15 +28,10 @@ const firebaseConfig = {
     const analytics = getAnalytics(app);
     const auth = getAuth();
     const db = getFirestore();
-    const btnLogout = document.querySelector('#logout')
-
-    // Log out
-    const logout = async () => {
-        await signOut(auth);
-        console.log("Successfully logged out");
-    }
-
-    btnLogout.addEventListener("click", logout)
-    auth.onAuthStateChanged(user => {
-        console.log(user);
-    })
+    const fname = document.querySelector("#fname");
+    const lname = document.querySelector("#lname");
+    const email = document.querySelector("#email");
+    const password = document.querySelector("#password");
+    const btnSignup = document.querySelector("#signup");
+    const signupForm = document.querySelector("#form")
+    const col = collection(db,'GPUser');

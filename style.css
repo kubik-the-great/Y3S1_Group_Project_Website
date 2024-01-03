@@ -295,7 +295,7 @@ ul{
     border-style: solid;
 }
 .col-profile img{
-    max-width: 40%;
+    max-width: 80%;
     padding:20px 20px;
     padding-left: 50px;
     
@@ -305,7 +305,7 @@ ul{
     line-height: 60px;
     margin: 25px 0;    
 }
-.col-profile p{
+.col-profile label{
     margin-right: 50px;
     text-align: left;
 }
@@ -361,97 +361,41 @@ ul{
     text-align: center;
     padding-bottom: 10px;
 }
-/*-----account page-----*/
-.account-page{
-    padding: 50px 0;
-    background: radial-gradient(#EEEEEE,#88FFF7);
-}
-.form-container{
-    background: #fff;
-    width: 300px;
-    height: 400px;
-    position: relative;
-    text-align: center;
-    padding: 20px 0;
-    margin: auto;
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
-    overflow: hidden;
-}
-.form-container span{
-    font-weight: bold;
-    padding: 0 10px;
-    color: #555;
-    cursor: pointer;
-    width: 100px;
-    display: inline-block;
-}
-.form-btn{
-    display: inline-block;
-    
-}
-.form-container form{
-    max-width: 300px;
-    padding: 0 20px;
-    position: absolute;
-    top: 130px;
-    transition: transform 1s;
-}
-form input{
-    width: 100%;
-    height: 30px;
-    margin: 10px 0;
-    padding: 0 10px;
-    border: 1px solid #ccc;
+
+/*-----chatbot-----*/
+#root{
+display: flex;
+flex-direction: column;
+height: 100vh;
 }
 
-form .btn{
-    width: 100%;
-    border: none;
-    cursor: pointer;
-    margin: 10px 0;
-}
-form .btn:focus{
-    outline: none;
-}
-#LoginForm{
-    left: -300px;
-}
-#RegForm{
-    left: 0;
-}
-form a{
-    font-size: 12px;
+#results{
+flex: 1;
+overflow: auto;
 }
 
-#Indicator{
-    width: 75px;
-    border: none;
-    background: #7C83FD;
-    height: 3px;
-    margin-top: 8px;
-    margin-left: 65px;
-    transform: translateX(100px);
-    transition: transform 1s;
+#inputHolder{
+padding: 10px;
+background: #eee;
+display: flex;
 }
-/* -----media query for less than 600 screen size-----
-@media only screen and (max-width: 600px){
-    .row{
-        text-align: center;
-    }
-    .col-2, .col-3, .col-4{
-        flex-basis: 100%;
-    }
-    .single-product .row{
-        text-align: left;
-    }
-    .single-product .col-2{
-        padding: 20px 0;
-    }
-    .single-product h1{
-        font-size: 26px;
-        line-height: 32px;
-    }
-    .cart-info p{
-        display: none;
-    }
-} */
+
+#inputField{
+flex: 1;
+padding: 10px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 5px;
+margin-right: 10px;
+}
+
+.message{
+padding: 10px;
+margin: 10px;
+border-radius: 5px;
+background: #2cffab;
+}
+
+.message.user{
+background: lightblue;
+}

@@ -5,9 +5,8 @@ import {
     signInWithEmailAndPassword,
     AuthErrorCodes,
     onAuthStateChanged,
-    FacebookAuthProvider,
     GoogleAuthProvider,
-    signInWithPopup
+    signInWithPopup,
 } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js'
 
@@ -26,13 +25,14 @@ const firebaseConfig = {
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
     const auth = getAuth();
+    const db = getFirestore();
     const email = document.querySelector("#email");
     const password = document.querySelector("#password");
     const btnLogin = document.querySelector("#login");
     const btnSignup = document.querySelector("#signup");
+    const loginForm = document.querySelector("#form")
     const divLoginMsg = document.querySelector("#divLoginMsg");
     const lblLoginMessage = document.querySelector("#lblLoginMessage");
-    const fprovider = new FacebookAuthProvider();
     const gprovider = new GoogleAuthProvider();
 
     const hideLoginError = () => {
@@ -46,7 +46,7 @@ const firebaseConfig = {
           lblLoginMessage.innerHTML = "Wrong password. Try again."
         }
         else {
-          lblLoginMessage.innerHTML = `Error: ${error.message}`   
+          lblLoginMessage.innerHTML = `Error: invalid E-mail or pasword`   
         }
     }
     const showLoginState = (user) => {
@@ -60,7 +60,10 @@ const firebaseConfig = {
         
         try{
             const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
+            showLoginState(auth);
             console.log(userCredential.user);
+            loginForm.reset();
+            window.location.href = "index.html"
         }
         catch(error){
             console.log(error);
@@ -70,32 +73,14 @@ const firebaseConfig = {
     }
 
     btnLogin.addEventListener("click",loginEmailPassword);
-
-    // Facebook login
-    const facebookimg = document.querySelector("#facebook");
-    facebookimg.addEventListener("click", function(){
-        signInWithPopup(auth, fprovider)
-        .then((result) => {
-            const user = result.user; // Signed in user info
-            const credential = FacebookAuthProvider.credentialFromResult(result);
-            const accessToken = credential.accessToken;
-
-            alert("Welcome " + user.displayName);
-            console.log(user);
-        })
-        .catch((error) =>{
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorMessage);
-            const email = error.customData.email;
-            const credential = FacebookAuthProvider.credentialFromError(error);
-        });
-    });
+    auth.onAuthStateChanged(user => {
+        console.log(user);
+    })
 
     // Google login
     const googleimg = document.querySelector("#google");
     googleimg.addEventListener("click", function() {
-        signInWithPopup(auth, provider)
+        signInWithPopup(auth, gprovider)
         .then((result) => {
             const user = result.user; // Signed in user info
             const credential = GoogleAuthProvider.credentialFromResult(result);

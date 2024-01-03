@@ -20,51 +20,18 @@
                     <a href="index.html"><img src="images/logo3.png" width="500px"></a>
                 </div>               
             </div>
-            <div class="row-message">
-                <div class="col-message">
-                    <p>Subject: <br> ---time---- <br> name <br> message </p>
-                </div>
-            </div>
+            <div id="root">
+				<h1>chatbot</h1>
+				<div id="results">
+		  
+				</div>
+				<div id="inputHolder">
+				  <input id="inputField" type="text"/>
+				  <button id="submitBtn">submit</button>
+				</div>
+			  </div>
         </div>
 		
-		<!--footer-->
-		<!--<div class="footer">
-			<div class="container">
-				<div class="row">
-					<div class="footer-col-1">
-						<h3>Download Our App</h3>
-						<p>Download App for Android and IOS mobile phone.</p>
-						<div class="app-logo">
-							<img src="images/AS.png">
-							<img src="images/GP.png">
-						</div>
-					</div>
-					<div class="footer-col-2">
-						<img src="images/logo.jpeg">
-						<p></p>
-					</div>
-				</div>
-				<hr>
-				<p class="copyright">Copyright 2021 - Ong Meng Kian</p>
-			</div>
-		</div>-->
-        
-		<!--js for navigation bar-->
-		<script>
-			var MenuItems = document.getElementById("MenuItems");
-			
-			MenuItems.style.maxHeight = "0px";
-			
-			function menutoggle(){
-				if(MenuItems.style.maxHeight == "0px")
-				{
-					MenuItems.style.maxHeight = "200px";
-				}
-				else
-				{
-					MenuItems.style.maxHeight = "0px";
-				}
-			}
-		</script>
+		<script src="main.js"></script>
 	</body>
 </html>
